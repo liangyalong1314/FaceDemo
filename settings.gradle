@@ -1,3 +1,4 @@
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -16,3 +17,5 @@ dependencyResolutionManagement {
 rootProject.name = "FaceDemo"
 include ':app'
 include ':tencent_face'
+
+
