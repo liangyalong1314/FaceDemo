@@ -15,7 +15,6 @@ import java.util.List;
  * 时间：2023/3/28
  * 描述：
  **/
-@SuppressLint("UnsafeExperimentalUsageError")
 public class MyCameraFilter implements CameraFilter {
         int i;
     public MyCameraFilter(int i){
