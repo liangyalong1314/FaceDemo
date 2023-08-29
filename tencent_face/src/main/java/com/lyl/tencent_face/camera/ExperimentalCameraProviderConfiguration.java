@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package com.lyl.face.demo;
+package com.lyl.tencent_face.camera;
 
 import static java.lang.annotation.RetentionPolicy.CLASS;
 
 import androidx.annotation.RequiresOptIn;
-
 
 import java.lang.annotation.Retention;
 

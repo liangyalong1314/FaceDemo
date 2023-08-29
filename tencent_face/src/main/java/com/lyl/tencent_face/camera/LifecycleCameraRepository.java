@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lyl.face.demo;
+package com.lyl.tencent_face.camera;
 
 import android.annotation.SuppressLint;
 
@@ -32,8 +32,6 @@ import androidx.lifecycle.Lifecycle.State;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.OnLifecycleEvent;
-
-
 
 import java.util.ArrayDeque;
 import java.util.Collection;

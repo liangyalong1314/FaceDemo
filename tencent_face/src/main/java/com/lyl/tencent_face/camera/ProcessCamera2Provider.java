@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lyl.face.demo;
+package com.lyl.tencent_face.camera;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
@@ -51,7 +51,6 @@ import androidx.camera.core.impl.utils.futures.FutureCallback;
 import androidx.camera.core.impl.utils.futures.FutureChain;
 import androidx.camera.core.impl.utils.futures.Futures;
 import androidx.camera.core.internal.CameraUseCaseAdapter;
-
 import androidx.concurrent.futures.CallbackToFutureAdapter;
 import androidx.core.util.Preconditions;
 import androidx.lifecycle.Lifecycle;
@@ -83,9 +82,9 @@ import java.util.concurrent.Executor;
  * <p>This is the standard provider for applications to use.
  */
 @SuppressLint("RestrictedApi")// TODO(b/200306659): Remove and replace with annotation on package-info.java
-public final class ProcessCameraProvider implements LifecycleCameraProvider {
+public final class ProcessCamera2Provider implements LifecycleCameraProvider {
 
-    private static final ProcessCameraProvider sAppInstance = new ProcessCameraProvider();
+    private static final ProcessCamera2Provider sAppInstance = new ProcessCamera2Provider();
 
     private final Object mLock = new Object();
     @GuardedBy("mLock")
@@ -102,7 +101,7 @@ public final class ProcessCameraProvider implements LifecycleCameraProvider {
     private Context mContext;
 
     /**
-     * Retrieves the {@link ProcessCameraProvider} associated with the current process.
+     * Retrieves the {@link ProcessCamera2Provider} associated with the current process.
      *
      * <p>The instance returned here can be used to bind use cases to any
      * {@link LifecycleOwner} with
@@ -154,7 +153,7 @@ public final class ProcessCameraProvider implements LifecycleCameraProvider {
      * singleton has not been configured via {@link #configureInstance(CameraXConfig)} a default
      * configuration will be used.
      *
-     * @return A future which will contain the {@link ProcessCameraProvider}. Cancellation of
+     * @return A future which will contain the {@link ProcessCamera2Provider}. Cancellation of
      * this future is a no-op. This future may fail with an {@link InitializationException} and
      * associated cause that can be retrieved by {@link Throwable#getCause()}. The cause will be
      * a {@link androidx.camera.core.CameraUnavailableException} if it fails to access any camera
@@ -164,7 +163,7 @@ public final class ProcessCameraProvider implements LifecycleCameraProvider {
      * @see #configureInstance(CameraXConfig)
      */
     @NonNull
-    public static ListenableFuture<ProcessCameraProvider> getInstance(@NonNull Context context) {
+    public static ListenableFuture<ProcessCamera2Provider> getInstance(@NonNull Context context) {
         Preconditions.checkNotNull(context);
         return Futures.transform(sAppInstance.getOrCreateCameraXInstance(context),
                 cameraX -> {
@@ -210,7 +209,7 @@ public final class ProcessCameraProvider implements LifecycleCameraProvider {
     }
 
     /**
-     * Perform one-time configuration of the {@link ProcessCameraProvider} singleton with the
+     * Perform one-time configuration of the {@link ProcessCamera2Provider} singleton with the
      * given {@link CameraXConfig}.
      *
      * <p>This method allows configuration of the camera provider via {@link CameraXConfig}. All
@@ -256,11 +255,11 @@ public final class ProcessCameraProvider implements LifecycleCameraProvider {
     }
 
     /**
-     * Allows shutting down this {@link ProcessCameraProvider} instance so a new instance can be
+     * Allows shutting down this {@link ProcessCamera2Provider} instance so a new instance can be
      * retrieved by {@link #getInstance(Context)}.
      *
      * <p>Once shutdown, a new instance can be retrieved with
-     * {@link ProcessCameraProvider#getInstance(Context)}.
+     * {@link ProcessCamera2Provider#getInstance(Context)}.
      *
      * <p>This method, along with {@link #configureInstance(CameraXConfig)} allows the process
      * camera provider to be used in test suites which may need to initialize CameraX in
@@ -629,6 +628,6 @@ public final class ProcessCameraProvider implements LifecycleCameraProvider {
         return availableCameraInfos;
     }
 
-    private ProcessCameraProvider() {
+    private ProcessCamera2Provider() {
     }
 }

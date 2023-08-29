@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lyl.face.demo;
+package com.lyl.tencent_face.camera;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
@@ -22,7 +22,6 @@ import android.os.Build;
 import androidx.annotation.GuardedBy;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.camera.core.Camera;
 import androidx.camera.core.CameraControl;
 import androidx.camera.core.CameraInfo;
