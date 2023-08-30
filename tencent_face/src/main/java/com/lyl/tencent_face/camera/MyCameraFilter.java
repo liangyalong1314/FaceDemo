@@ -14,7 +14,8 @@ import java.util.List;
  * 作者：梁亚龙
  * 时间：2023/3/28
  * 描述：
- **/
+ *
+ * @author liangyalong*/
 public class MyCameraFilter implements CameraFilter {
         int i;
     public MyCameraFilter(int i){
@@ -32,7 +33,7 @@ public class MyCameraFilter implements CameraFilter {
 
         String getImplementationType = camera.getImplementationType();
         Log.i("TAG", "getImplementationType: " + getImplementationType);
-        List linkedHashSet = new ArrayList();
+        ArrayList<CameraInfo> linkedHashSet = new ArrayList<CameraInfo>();
         linkedHashSet.add(camera);
         // 最后一个camera
         return linkedHashSet;
