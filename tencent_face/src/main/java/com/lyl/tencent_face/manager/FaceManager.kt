@@ -121,7 +121,7 @@ class FaceManager {
     var mYTFaceAlignment: YTFaceAlignment? = null
 
     var mYTFaceQualityPro: YTFaceQualityPro? = null
-    var faceF: String? = null
+    var mFaceFile: String? = null
     val options = YTFaceTracker.Options()
     fun initFace(
         context: Context,
@@ -134,8 +134,8 @@ class FaceManager {
             loadLibs()
             loadModels(context.assets)
             initSdk(context)
-            faceF = faceFile
-            Log.i("TAG", "initFace: " + initFaceLib())
+            mFaceFile = faceFile
+
         }
         return authWithDeviceSn
     }
@@ -159,7 +159,7 @@ class FaceManager {
             return authResult
         }
         //删除文件
-        val file = File(faceF + fileName)
+        val file = File(mFaceFile + fileName)
         return if (!file.delete()) {
             AuthResult.getAuthResult(9980)
         } else {
@@ -179,7 +179,7 @@ class FaceManager {
      */
     fun getAllFace(): ArrayList<FaceForReg> {
         var filteredFaces: ArrayList<FaceForReg> = ArrayList()
-        var file = File(faceF)
+        var file = File(mFaceFile)
         if (!file.exists()) {
             file.mkdirs()
         }
@@ -247,7 +247,7 @@ class FaceManager {
         var addFace = addFace(f)
         if (addFace.isSucceeded()) {
             val filePath: String =
-                File(faceF + faceName).absolutePath
+                File(mFaceFile + faceName).absolutePath
             FloatsFileHelper.writeFloatsToFile(feature, filePath)
             return AuthResult(0, "特征添加成功")
         }
