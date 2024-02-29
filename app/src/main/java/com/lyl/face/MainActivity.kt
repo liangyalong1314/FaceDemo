@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         FileUtil.init(this)
         var authWithDeviceSn =
-            face.initFace(this, "p8rzuoxtj", "4b9da57aae624850b2d2c20b11f476ae", FileUtil . getSdCardCacheDir ()!!.absolutePath
+            face.initFace(this, "", "", FileUtil . getSdCardCacheDir ()!!.absolutePath
                 .toString() + "/fubaoFace/")
         Log.i("TAG", "onCreate: "+authWithDeviceSn)
         binding = ActivityMainBinding.inflate(layoutInflater)
